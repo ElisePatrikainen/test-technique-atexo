@@ -52,3 +52,16 @@ export const orderedFullSet = [
     { color: 'trèfle', value: 'dame', index: 50 },
     { color: 'trèfle', value: 'roi', index: 51 }
 ]
+
+export const unorderedSet = [
+    { color: 'coeur', value: 6, index: 18 },
+    { color: 'carreau', value: 'as', index: 0 },
+    { color: 'carreau', value: 3, index: 2 },
+    { color: 'trèfle', value: 'as', index: 39 },
+    { color: 'trèfle', value: 4, index: 42 },
+    { color: 'carreau', value: 8, index: 7 },
+    { color: 'coeur', value: 'roi', index: 25 },
+    { color: 'carreau', value: 5, index: 4 },
+    { color: 'carreau', value: 'dame', index: 11 },
+    { color: 'pique', value: 4, index: 29 }
+]
