@@ -1,5 +1,5 @@
 import { orderSet } from "../../../src/libs/orderCards"
-import { unorderedSet } from "./data"
+import { unorderedSet } from "./data-samples"
 
 describe('it should create a card ', () => {
     it('orders a set', () => {

@@ -1,5 +1,5 @@
 import { pickIntegers, pickCards } from '../../../src/libs/unorderedSetFactory'
-import { orderedFullSet } from './data';
+import { orderedFullSet } from './data-samples';
 
 describe('Create an unordered list of unique integers representing the cards index to pick', () => {
     
