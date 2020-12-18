@@ -26,7 +26,6 @@ describe('Create a card set with card indexes matching an integer list', () => {
     it('creates a set of 10 unordered cards', () => {
         const integersList = [18, 0, 2, 39, 42, 7, 25, 4, 11, 29]
         const cardSet = pickCards(integersList, orderedFullSet)
-        console.log(cardSet)
         expect(cardSet.length).toBe(10)
         const diamondAceCard = cardSet[1]
         expect(diamondAceCard.color).toBe('carreau')
