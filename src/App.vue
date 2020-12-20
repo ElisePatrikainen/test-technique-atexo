@@ -1,11 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <button
+    @click="createANewSet()"
+    data-test="newSetButton">
+  </button>
+  <cards-set ordered=false></cards-set>
+  <button 
+    @click="orderCurrentCardsSet()"
+    data-test="orderSetButton">
+  </button>
+  <cards-set></cards-set>
 </template>
 
 <script>
+import CardsSet from './components/CardsSet.vue'
+import { store } from './store'
 
 export default {
-  name: 'App'
+  components: { CardsSet },
+  name: 'App',
+  methods: {
+    createANewSet() {
+      store.createNewUnorderedCardsSet()
+    },
+    orderCurrentCardsSet() {
+      store.orderCurrentCardsSet()
+    }
+  },
+  mounted() {
+    store.init()
+  }
 }
 </script>
 

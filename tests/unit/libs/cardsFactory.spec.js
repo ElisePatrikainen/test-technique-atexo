@@ -1,4 +1,4 @@
-import { createCard, createCards } from '../../../src/libs/cardsFactory.js'
+import { createCard, createCards } from '@/libs/cardsFactory.js'
 
 describe('create a card', () => {
     it('creates a number card', () => {
@@ -11,13 +11,13 @@ describe('create a card', () => {
         expect(figureCard).toHaveProperty('color', 'pique')
         expect(figureCard).toHaveProperty('value', 'valet')
     })
-  })
+})
 
 
 describe('it should create a cards set, and add a set index to each card', () => {
-    const cards = createCards()
-    // todo: split 'it'
+    // todo: split in several 'it'
     it('creates a number card', () => {
+        const cards = createCards()
         expect(cards.length).toBe(52)
         expect(cards[17]).toHaveProperty('index', 17)
         const diamondCards = cards.filter(card => card.color === 'carreau')
