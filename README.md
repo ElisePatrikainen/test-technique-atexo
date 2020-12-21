@@ -13,7 +13,11 @@ Le projet présente une interface avec un jeu de cartes mélangées 'retournées
 
 ### Méthodologie
 
-Le projet est développé en TDD, à l'exception de certains éléments d'UI `Cards.js` (pour une contrainte de temps). Les tests unitaires peuvent être joués via la commande `yarn test:unit`.
+Le projet est développé en TDD:
+- entièrement pour les parties 'libs/cards' et 'store'
+- partiellement pour les composants (pour une contrainte de temps)
+
+Les tests unitaires peuvent être joués via la commande `yarn test:unit`.
 
 ### Points d'améliorations sur les développements existants
 
