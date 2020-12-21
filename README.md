@@ -7,7 +7,8 @@
 
 Le projet présente une interface avec un jeu de cartes mélangées 'retournées'. L'utilisateur peut alors :
 - sélectionner des cartes (en cliquant dessus)
-- mettre sa donne en ordre (en cliquant sur le bouton 'order cards') 
+- mettre sa donne en ordre (en cliquant sur le bouton 'order cards')
+- réinitialiser et remélanger le jeu (en cliquant sur le bouton 'remix cards')
 
 
 ### Méthodologie
