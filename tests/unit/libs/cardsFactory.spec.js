@@ -1,6 +1,6 @@
-import { createCard, createCards } from '@/libs/cardsFactory.js'
+import { createCard, createCards } from '@/libs/cards/cardsFactory.js'
 
-describe('create a card', () => {
+describe('[Cards lib] createCard function', () => {
     it('creates a number card', () => {
         const card = createCard('carreau', 3)
         expect(card).toHaveProperty('color', 'carreau')
@@ -16,7 +16,7 @@ describe('create a card', () => {
 })
 
 
-describe('it should create a cards set, and add a set index to each card', () => {
+describe('[Cards lib] createCards function', () => {
     // todo: split in several 'it'
     it('creates a number card', () => {
         const cards = createCards()

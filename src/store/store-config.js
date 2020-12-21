@@ -1,10 +1,10 @@
-import * as cards from '../libs'
+import * as cardsLib from '../libs/cards'
 
-// todo: split mutations in an oter 
+// todo: split mutations in an other file
 const stateConfig = {
   state () {
     return {
-        orderedGame: cards.createCards(),
+        orderedGame: cardsLib.createCards(),
         mixedGame: null,
         userSet: null,
         orderedUserSet: null
@@ -12,9 +12,9 @@ const stateConfig = {
   },
   mutations: {
     mixGame(state) {
-        // todo: put 52 as optional
-        state.orderedGame = cards.createCards()
-        state.mixedGame = cards.createUnordonnedSet(52, state.orderedGame)
+        // todo: put 52 argument as optional
+        state.orderedGame = cardsLib.createCards()
+        state.mixedGame = cardsLib.createUnordonnedSet(52, state.orderedGame)
         state.userSet = null
         state.orderedUserSet = null
     },
@@ -29,7 +29,7 @@ const stateConfig = {
         }
     },
     orderSet(state) {
-        state.orderedUserSet = cards.orderSet(state.userSet)
+        state.orderedUserSet = cardsLib.orderSet(state.userSet)
     }
   }
 }

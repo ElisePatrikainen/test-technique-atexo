@@ -1,8 +1,7 @@
-import { pickIntegers, pickCards, createUnordonnedSet } from '../../../src/libs/unorderedSetFactory'
+import { pickIntegers, pickCards, createUnordonnedSet } from '../../../src/libs/cards/unorderedSetFactory'
 import { orderedFullSet } from './data-samples';
 
-// todo: only 1 describe ? Or function name i describe ?
-describe('Create an unordered list of unique integers representing the cards index to pick', () => {
+describe('[Cards lib] pickIntegers function', () => {
     
     it('creates a set of 10 unique integers among 52', () => {
         const integersList = pickIntegers(10, 52)
@@ -23,7 +22,7 @@ describe('Create an unordered list of unique integers representing the cards ind
     // test that the list is 'unordered': stochastically / statistically ?
 })
 
-describe('pickCards', () => {
+describe('[Cards lib] pickCards function', () => {
     it('creates a card set with card indexes matching an integer list', () => {
         const integersList = [18, 1, 2, 39, 42, 7, 25, 4, 11, 29]
         const cardSet = pickCards(integersList, orderedFullSet)
@@ -34,7 +33,7 @@ describe('pickCards', () => {
     })
 })
 
-describe('createUnordonnedSet', () => {
+describe('[Cards lib] createUnordonnedSet function', () => {
     it('creates a card set (length passed as argument)', () => {
         const length = 10
         const cardSet = createUnordonnedSet(length, orderedFullSet)

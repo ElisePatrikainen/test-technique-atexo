@@ -1,7 +1,7 @@
-import { orderSet } from "../../../src/libs/orderCards"
+import { orderSet } from "../../../src/libs/cards/orderCards"
 import { unorderedSet } from "./data-samples"
 
-describe('it should create a card ', () => {
+describe('[Cards lib] orderSet function ', () => {
     it('orders a set', () => {
         const orderedSet = orderSet(unorderedSet)
         orderedSet.forEach((card, index) => {
