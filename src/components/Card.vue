@@ -1,7 +1,8 @@
 <template>
-<div class="container">
-    <div v-if="!card.selected" data-test="cardsBack" class="inner cards-back" @click="selectCard()"></div>
-    <div v-if="card.selected" data-test="cardsFront" class="inner cards-front">
+<div class="container" 
+    :class="card.selected ? '' : 'cards-back'"
+    @click="card.selected ? '' : selectCard()">
+    <div v-if="card.selected" data-test="cardsFront" class="cards-front-inner">
         <span>{{card.value}}</span>
         <span>{{card.color}}</span>
     </div>
@@ -29,17 +30,14 @@ export default {
     margin: 10px
 }
 
-.inner {
-    height: 100%;
-    width: 100%;
-}
-
 .cards-back {
     cursor: pointer;
     background-color: pink;
 }
 
-.cards-front {
+.cards-front-inner {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
