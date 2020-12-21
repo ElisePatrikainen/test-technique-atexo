@@ -1,8 +1,9 @@
 <template>
 <div class="container">
-    <div v-if="!card.selected" data-test="cardsBack" class="cards-back" @click="selectCard()"></div>
-    <div v-if="card.selected" data-test="cardsBack" class="cards-back">
-        {{card.value + ' ' + card.color}}
+    <div v-if="!card.selected" data-test="cardsBack" class="inner cards-back" @click="selectCard()"></div>
+    <div v-if="card.selected" data-test="cardsFront" class="inner cards-front">
+        <span>{{card.value}}</span>
+        <span>{{card.color}}</span>
     </div>
 </div>
 </template>
@@ -24,14 +25,23 @@ export default {
 .container {
     border: 1px solid black;
     height: 100px;
-    width: 50px;
+    width: 70px;
     margin: 10px
+}
+
+.inner {
+    height: 100%;
+    width: 100%;
 }
 
 .cards-back {
     cursor: pointer;
-    height: 100%;
-    width: 100%;
+    background-color: pink;
+}
+
+.cards-front {
+    display: flex;
+    flex-direction: column;
 }
 
 </style>

@@ -1,8 +1,5 @@
 <template>
-  <div>mixed game: 
-    <game-cards></game-cards>
-  </div>
-  <game-cards userSet=true></game-cards>
+  <game-cards></game-cards>
   <div>
     <button 
       @click="orderSet()"
@@ -15,6 +12,7 @@
       Remix game
     </button>
   </div>
+  <game-cards userSet=true></game-cards>
   <game-cards userSet=true ordered=true></game-cards>
 </template>
 
@@ -24,11 +22,6 @@ import GameCards from './components/GameCards.vue'
 export default {
   components: { GameCards },
   name: 'App',
-  computed: {
-    // count () {
-    //   return this.$store.state.mixedGame
-    // }
-  },
   methods: {
     mixGame() {
       this.$store.commit('mixGame')
