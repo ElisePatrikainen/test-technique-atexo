@@ -10,7 +10,8 @@ const getValue = (colorIndex) => {
 
 export const createCard = (color, colorIndex) => ({
     color,
-    value: getValue(colorIndex)
+    value: getValue(colorIndex),
+    selected: false
 })
 
 const createColorSet = (color) => {

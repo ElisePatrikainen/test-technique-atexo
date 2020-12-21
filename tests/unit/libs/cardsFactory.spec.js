@@ -5,11 +5,13 @@ describe('create a card', () => {
         const card = createCard('carreau', 3)
         expect(card).toHaveProperty('color', 'carreau')
         expect(card).toHaveProperty('value', 4)
+        expect(card).toHaveProperty('selected', false)
     })
     it('creates a figure card', () => {
         const figureCard = createCard('pique', 10)
         expect(figureCard).toHaveProperty('color', 'pique')
         expect(figureCard).toHaveProperty('value', 'valet')
+        expect(card).toHaveProperty('selected', false)
     })
 })
 

@@ -15,9 +15,9 @@ const stateConfig = {
         // todo: put 52 as optional
         state.mixedGame = cards.createUnordonnedSet(52, state.orderedGame)
     },
-    selectCard(state, index) {
+    selectCard(state, card) {
         // todo: handle errors
-        const selectedCard = state.mixedGame[index]
+        const selectedCard = state.mixedGame.find(c => c === card)
         selectedCard.selected = true
         if (state.userSet) {
             state.userSet.push(selectedCard)

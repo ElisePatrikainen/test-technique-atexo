@@ -5,10 +5,14 @@ describe("Card.vue", () => {
     it('displays first the back of the card', () => {
         const wrapper = shallowMount(Card)
         // todo: find better names
-        const cardsBackDisplayed = !!wrapper.find('[data-test]="cardsBack"')
+        const cardsBackDisplayed = !!wrapper.find('[data-test="cardsBack"]')
         expect(cardsBackDisplayed).toBeTruthy
-        const cardsFrontDisplayed = !!wrapper.find('[data-test]="cardsFront"')
+        const cardsFrontDisplayed = !!wrapper.find('[data-test="cardsFront"]')
         expect(cardsFrontDisplayed).toBeFalsy
+
+    }),
+    it('displays turns the card on click on the back and notifies the store that this card has been selected', () => {
+        // todo
 
     })
 })

@@ -3,20 +3,22 @@
 
 ## Notes
 
+### Présentation
+
+Le projet présente une interface avec un jeu de cartes mélangées 'retournées'. L'utilisateur peut alors :
+- sélectionner des cartes (en cliquant dessus)
+- mettre sa donne en ordre (en cliquant sur le bouton 'order cards') 
+
+
 ### Méthodologie
 
-Le projet est développé en TDD.
-
-### Avancement
-
-Le projet est en cours de développement. 
-
-Etat d'avancement: création des fonctionalités permettant de tirer un set parmi un jeu de carte, et de trier ce set. Ces fonctionalités **ne sont pas encore visibles sur l'interface graphique**, mais peuvent être 'visualisées' en exécutant les tests unitaires associés à ces fontionnalités, via la commande `yarn test:unit`.
+Le projet est développé en TDD, à l'exception du composant `Cards.js` (pour une contrainte de temps). Les tests unitaires peuvent être joués via la commande `yarn test:unit`.
 
 ### Points d'améliorations sur les développements existants
 
-- refactorer au niveau des constantes: (ex: nom des couleurs)
+- centraliser les constantes (ex: nom des couleurs)
 - ajout de `try/catchs` ou validateurs (sur les opérations de tableau en particulier)
+- nombreuses remarques ('todo') dans le code à revoir
 - tester le fait que le set 'tiré' par l'utilisateur soit bien désordonné (test statistique ?)
 
 
