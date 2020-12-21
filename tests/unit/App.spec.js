@@ -7,7 +7,7 @@ describe('App.vue', () => {
   // todo: create new mix on mounted
   // todo: before each ?
 
-  it('displays GameCards and SetCards components x2 + commit "mixGame"', () => {
+  it('displays GameCards components and commits "mixGame" action on init', () => {
     const wrapper = shallowMount(App, {
       global: {
         mocks: {
@@ -18,7 +18,7 @@ describe('App.vue', () => {
       }
     })
     const gameCardsComponents = wrapper.findAllComponents(GameCards)
-    expect(gameCardsComponents.length).toBe(1)
+    expect(gameCardsComponents.length).toBe(3)
     expect(wrapper.vm.$store.commit).toHaveBeenCalledWith('mixGame')
     // 2 comps, 1 ordered and 1 unordered
 

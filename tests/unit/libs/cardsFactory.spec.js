@@ -11,7 +11,7 @@ describe('create a card', () => {
         const figureCard = createCard('pique', 10)
         expect(figureCard).toHaveProperty('color', 'pique')
         expect(figureCard).toHaveProperty('value', 'valet')
-        expect(card).toHaveProperty('selected', false)
+        expect(figureCard).toHaveProperty('selected', false)
     })
 })
 

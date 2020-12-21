@@ -27,7 +27,7 @@ describe('store', () => {
     expect(store.state.userSet).toBeNull()
     const selectedCard = store.state.mixedGame[5]
     expect(selectedCard.selected).toBeFalsy
-    store.commit('selectCard', 5)
+    store.commit('selectCard', selectedCard)
     const userSet = store.state.userSet
     expect(userSet.length).toBe(1)
     expect(userSet[0]).toBe(selectedCard)
@@ -37,9 +37,9 @@ describe('store', () => {
   it('orders the current set', () => {
     const store = createStore(storeConfig)
     store.commit('mixGame')
-    store.commit('selectCard', 5)
-    store.commit('selectCard', 12)
-    store.commit('selectCard', 15)
+    store.commit('selectCard', store.state.mixedGame[5])
+    store.commit('selectCard', store.state.mixedGame[2])
+    store.commit('selectCard', store.state.mixedGame[12])
     expect(store.state.orderedUserSet).toBeNull()
     store.commit('orderSet')
     expect(store.state.orderedUserSet.length).toBe(3)
