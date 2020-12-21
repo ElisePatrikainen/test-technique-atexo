@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils"
-import GameCards from '@/components/GameCards.vue'
+import Cards from '@/components/Cards.vue'
 import Card from '@/components/Card.vue'
 import { orderedFullSet } from '../libs/data-samples'
 
@@ -12,7 +12,7 @@ describe('Game cards component', () => {
             }
           }
         
-          const wrapper = shallowMount(GameCards, {
+          const wrapper = shallowMount(Cards, {
             global: {
               mocks: {
                 $store
@@ -21,8 +21,6 @@ describe('Game cards component', () => {
           })
         let cardComponents = wrapper.findAllComponents(Card)
         expect(cardComponents.length).toBe(wrapper.vm.$store.state.mixedGame.length)
-        console.log(cardComponents[0].vm)
-        console.log(cardComponents[0].vm.props)
         expect(cardComponents[0].vm.card).toBe(wrapper.vm.$store.state.mixedGame[0])
     })
 })

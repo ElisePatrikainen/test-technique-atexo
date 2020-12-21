@@ -1,6 +1,6 @@
 import * as cards from '../libs'
 
-// todo: split among files
+// todo: split mutations in an oter 
 const stateConfig = {
   state () {
     return {

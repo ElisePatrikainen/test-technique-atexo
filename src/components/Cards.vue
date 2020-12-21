@@ -8,7 +8,7 @@
 import Card from './Card.vue'
 export default {
   components: { Card },
-    name: 'GameCards',
+    name: 'Cards',
     props: ['userSet', 'ordered'],
     computed: {
         cards() {

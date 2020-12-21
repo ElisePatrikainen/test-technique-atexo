@@ -1,5 +1,5 @@
 <template>
-  <game-cards></game-cards>
+  <cards></cards>
   <div>
     <button 
       @click="orderSet()"
@@ -12,15 +12,15 @@
       Remix game
     </button>
   </div>
-  <game-cards userSet=true></game-cards>
-  <game-cards userSet=true ordered=true></game-cards>
+  <cards userSet=true></cards>
+  <cards userSet=true ordered=true></cards>
 </template>
 
 <script>
-import GameCards from './components/GameCards.vue'
+import Cards from './components/Cards.vue'
 
 export default {
-  components: { GameCards },
+  components: { Cards },
   name: 'App',
   methods: {
     mixGame() {
