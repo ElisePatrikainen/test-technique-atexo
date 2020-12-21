@@ -1,40 +1,32 @@
 <template>
   <cards></cards>
   <div>
-    <button 
-      @click="orderSet()"
-      data-test="orderSet">
-      Order set
-    </button>
-    <button
-      @click="mixGame()"
-      data-test="mixGame">
-      Remix game
-    </button>
+    <button @click="orderSet()" data-test="orderSet">Order set</button>
+    <button @click="mixGame()" data-test="mixGame">Remix game</button>
   </div>
-  <cards userSet=true></cards>
-  <cards userSet=true ordered=true></cards>
+  <cards userSet="true"></cards>
+  <cards userSet="true" ordered="true"></cards>
 </template>
 
 <script>
-import Cards from './components/Cards.vue'
+import Cards from "./components/Cards.vue";
 
 export default {
   components: { Cards },
-  name: 'App',
+  name: "App",
   methods: {
     mixGame() {
-      this.$store.commit('mixGame')
+      this.$store.commit("mixGame");
     },
     orderSet() {
-      this.$store.commit('orderSet')
-    }
+      this.$store.commit("orderSet");
+    },
   },
   mounted() {
     // todo: to test
-    this.$store.commit('mixGame')
-  }
-}
+    this.$store.commit("mixGame");
+  },
+};
 </script>
 
 <style>
