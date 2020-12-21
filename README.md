@@ -1,4 +1,4 @@
-# Test technique Atexo
+# Test technique
 
 
 ## Notes

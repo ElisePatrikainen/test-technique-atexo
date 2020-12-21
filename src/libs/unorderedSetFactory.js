@@ -18,7 +18,7 @@ export const pickIntegers = (numberOfIntegers, max) => {
 // todo: add validators?
 // todo: naming?
 export const pickCards = (integersList, orderedFullSet) => integersList.map(
-        integer => orderedFullSet[integer]
+        integer => orderedFullSet[integer - 1]
 )
 
 export const createUnordonnedSet = (cardsSetLength, orderedFullSet) => {

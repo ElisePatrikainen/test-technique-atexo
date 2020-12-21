@@ -25,7 +25,7 @@ describe('Create an unordered list of unique integers representing the cards ind
 
 describe('pickCards', () => {
     it('creates a card set with card indexes matching an integer list', () => {
-        const integersList = [18, 0, 2, 39, 42, 7, 25, 4, 11, 29]
+        const integersList = [18, 1, 2, 39, 42, 7, 25, 4, 11, 29]
         const cardSet = pickCards(integersList, orderedFullSet)
         expect(cardSet.length).toBe(10)
         const diamondAceCard = cardSet[1]
