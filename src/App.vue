@@ -1,33 +1,42 @@
 <template>
   <button
-    @click="createANewSet()"
-    data-test="newSetButton">
+    @click="mixGame()"
+    data-test="mixGame">
+    Mix game
   </button>
+  <div>mixed game: 
+    <game-cards></game-cards>
+  </div>
   <cards-set ordered=false></cards-set>
   <button 
-    @click="orderCurrentCardsSet()"
-    data-test="orderSetButton">
+    @click="orderSet()"
+    data-test="orderSet">
+    Order set
   </button>
-  <cards-set></cards-set>
 </template>
 
 <script>
-import CardsSet from './components/CardsSet.vue'
-import { store } from './store'
+import GameCards from './components/GameCards.vue'
 
 export default {
-  components: { CardsSet },
+  components: { GameCards },
   name: 'App',
+  computed: {
+    // count () {
+    //   return this.$store.state.mixedGame
+    // }
+  },
   methods: {
-    createANewSet() {
-      store.createNewUnorderedCardsSet()
+    mixGame() {
+      this.$store.commit('mixGame')
     },
-    orderCurrentCardsSet() {
-      store.orderCurrentCardsSet()
+    orderSet() {
+      this.$store.commit('orderSet')
     }
   },
   mounted() {
-    store.init()
+    // todo: to test
+    this.$store.commit('mixGame')
   }
 }
 </script>

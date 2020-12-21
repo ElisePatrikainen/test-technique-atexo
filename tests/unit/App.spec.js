@@ -1,43 +1,67 @@
-import { mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import App from '@/App.vue'
-import CardsSet from '@/components/CardsSet.vue'
-import { store } from '../../src/store'
+import GameCards from '@/components/GameCards.vue'
 
 describe('App.vue', () => {
 
-  it('displays unordered and ordered sets', () => {
-    store.init()
-    const wrapper = mount(App)
-    const cardsSetComponents = wrapper.findAllComponents(CardsSet)
-    expect(cardsSetComponents[0].vm.$props.ordered).toBeFalsy
-    expect(cardsSetComponents[1].vm.$props.ordered).toBeTruthy
-  }),
+  // todo: create new mix on mounted
+  // todo: before each ?
 
-  // it('inits the store when mounted', async () => {
-  //   console.log(store.init)
-  //   const initStoreSpy = jest.spyOn(store, 'init')
-  //   console.log(store.init)
-  //   mount(App)
-  //   expect(initStoreSpy).toBeCalled()
-  // }),
-// todo: check for data-test if good practice
-  it('click on the "new set" button calls the store method "createNewUnorderedCardsSet"', async () => {
-    store.init()
-    const wrapper = mount(App)
-    const createANewSetSpy = jest.spyOn(store, 'createNewUnorderedCardsSet')
-    const getNewSetButton = wrapper.find('[data-test="newSetButton"]')
-    await getNewSetButton.trigger('click')
-    expect(createANewSetSpy).toBeCalled()
-  }),
-  
-  it('click on the "order set" button calls the store method "orderCurrentCardsSet"', async () => {
-    store.init()
-    const wrapper = mount(App)
-    const orderSetSpy = jest.spyOn(store, 'orderCurrentCardsSet')
-    const orderSetButton = wrapper.find('[data-test="orderSetButton"]')
-    await orderSetButton.trigger('click')
-    expect(orderSetSpy).toBeCalled()
+  it('displays GameCards and SetCards components x2 + commit "mixGame"', () => {
+    const wrapper = shallowMount(App, {
+      global: {
+        mocks: {
+          $store: {
+            commit: jest.fn()
+          }
+        }
+      }
+    })
+    const gameCardsComponents = wrapper.findAllComponents(GameCards)
+    expect(gameCardsComponents.length).toBe(1)
+    expect(wrapper.vm.$store.commit).toHaveBeenCalledWith('mixGame')
+    // 2 comps, 1 ordered and 1 unordered
+
   })
 
-  // test on mounted - stub mounted method?
+  it('creates a new mixed game on "mix game" button click', async () => {
+    const $store = {
+      state: {
+      },
+      commit: jest.fn()
+    }
+  
+    const wrapper = shallowMount(App, {
+      global: {
+        mocks: {
+          $store
+        }
+      }
+    })
+
+    const mixGameButton = wrapper.find('[data-test="mixGame"]')
+    await mixGameButton.trigger('click')
+    expect($store.commit).toHaveBeenCalledWith('mixGame')
+  }),
+
+  
+  it('orders the user set on "order set" button click', async () => {
+    const $store = {
+      state: {
+      },
+      commit: jest.fn()
+    }
+  
+    const wrapper = shallowMount(App, {
+      global: {
+        mocks: {
+          $store
+        }
+      }
+    })
+
+    const orderSetButton = wrapper.find('[data-test="orderSet"]')
+    await orderSetButton.trigger('click')
+    expect($store.commit).toHaveBeenCalledWith('orderSet')
+  })
 })
