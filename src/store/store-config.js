@@ -4,17 +4,25 @@ import * as cardsLib from "../libs/cards";
 const stateConfig = {
   state() {
     return {
-      orderedGame: cardsLib.createCards(),
+      orderedGame: null,
+      colors: ['Carreau', 'Coeur', 'Pique', 'Trèfle'],
+      cardValues: ['As', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Valet', 'Dame', 'Roi'],
       mixedGame: null,
+      mixedColors: null,
+      mixedCardValues: null,
       userSet: null,
       orderedUserSet: null,
     };
+
+
   },
   mutations: {
     mixGame(state) {
       // todo: put 52 argument as optional
-      state.orderedGame = cardsLib.createCards();
-      state.mixedGame = cardsLib.createUnordonnedSet(52, state.orderedGame);
+      state.mixedColors = cardsLib.createUnordonnedSet(state.colors);
+      state.mixedCardValues = cardsLib.createUnordonnedSet(state.cardValues);
+      state.orderedGame = cardsLib.createCards(state.mixedColors, state.mixedCardValues);
+      state.mixedGame = cardsLib.createUnordonnedSet(state.orderedGame);
       state.userSet = null;
       state.orderedUserSet = null;
     },
