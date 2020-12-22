@@ -1,5 +1,8 @@
 # Test technique
 
+## (!) Update: 
+Une v2 de test est disponible avec ordre aléatoire des couleurs et numéros de carte sur la branche 'withColorAndCardsNumberMix'.
+Les modifications avec la v1 sont disponibles [ici](https://github.com/ElisePatrikainen/test-technique-cards-game/commit/0692e9bae96359d9f7a69197df161d284616b188)
 
 ## Notes
 
